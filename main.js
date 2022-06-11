@@ -11,16 +11,31 @@ function Game_load(width,height){
         Texts("旧" + Datas[I].変更箇所,10,150,30);
         Texts("新" + Datas[I].変更箇所,10,550,30);
         Texts(Datas[I].カード名,10,10,60);
-        Card_Text(Datas[I].旧,Datas[I].新);
+        Card_Text(Datas[I].旧,Datas[I].新,Datas[I].赤,Datas[I].青);
         break;
       };
 
-      function Card_Text(a,b){
+      function A_B(a,b){
+        var Cut = b;
+        for(var I = 0; I < a.length; I++){
+          if(Cut==a.slice(I,Cut.length+I)) break;
+          else console.log(a.slice(I,Cut.length+I));
+        };
+        console.log(a.length);
+        console.log(b.length);
+        return;
+      };
+
+      function Card_Text(a,b,c,d){
+        if(!c) c = {};
+        if(!d) d = {};
         var New_text = [];
         var Old_text = [];
-        var c = null;
-        var d = {};
-        var e = {};
+
+        /*
+
+        if(a.length > b.length) A_B(a,b);
+        else A_B(b,a);
 
         for(var I = 0; I < a.length; I++){
           for(var J = a.length; J > 0; J--){
@@ -67,9 +82,6 @@ function Game_load(width,height){
           while(bb.match(d[I])) bb = bb.replace(d[I],cc);
         };
 
-        console.log(a);
-        console.log(b);
-
         for(var I = 0; I < a.length; I++){
           if(aa[I]=="嬲") New_text[I] = [a[I],"white"];
           else New_text[I] = [a[I],"coral"];
@@ -77,6 +89,18 @@ function Game_load(width,height){
         for(var I = 0; I < b.length; I++){
           if(bb[I]=="嬲") Old_text[I] = [b[I],"white"];
           else Old_text[I] = [b[I],"lightsteelblue"];
+        };
+
+        */
+
+        for(var I = 0; I < a.length; I++){
+          if(c[I]) New_text[I] = [a[I],"coral"];
+          else New_text[I] = [a[I],"white"];
+        };
+
+        for(var I = 0; I < b.length; I++){
+          if(d[I]) Old_text[I] = [b[I],"lightsteelblue"];
+          else Old_text[I] = [b[I],"white"];
         };
 
         var X = 10;
