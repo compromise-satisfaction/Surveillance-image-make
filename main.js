@@ -110,6 +110,10 @@ function Game_load(width,height){
         for(var I = 0; I < New_text.length; I++){
           Texts(New_text[I][0],X,Y,30,New_text[I][1]);
           X += 30;
+          if(New_text[I][0]=="\n"){
+            X = 10;
+            Y+= 40;
+          };
           if(X==1540){
             X = 10;
             Y+= 40;
@@ -120,6 +124,10 @@ function Game_load(width,height){
         for(var I = 0; I < Old_text.length; I++){
           Texts(Old_text[I][0],X,Y,30,Old_text[I][1]);
           X += 30;
+          if(Old_text[I][0]=="\n"){
+            X = 10;
+            Y+= 40;
+          };
           if(X==1540){
             X = 10;
             Y+= 40;
