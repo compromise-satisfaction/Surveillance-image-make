@@ -94,12 +94,12 @@ function Game_load(width,height){
         */
 
         for(var I = 0; I < a.length; I++){
-          if(c[I]) New_text[I] = [a[I],"coral"];
+          if(c[I+1]) New_text[I] = [a[I],"coral"];
           else New_text[I] = [a[I],"white"];
         };
 
         for(var I = 0; I < b.length; I++){
-          if(d[I]) Old_text[I] = [b[I],"lightsteelblue"];
+          if(d[I+1]) Old_text[I] = [b[I],"lightsteelblue"];
           else Old_text[I] = [b[I],"white"];
         };
 
